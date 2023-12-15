@@ -1,7 +1,10 @@
 package pairmatching.controller;
 
+import pairmatching.constant.Course;
 import pairmatching.constant.MainFunc;
+import pairmatching.constant.Mission;
 import pairmatching.domain.CourseMission;
+import pairmatching.domain.History;
 import pairmatching.view.InputView;
 import pairmatching.view.OutputView;
 
@@ -9,13 +12,14 @@ import java.util.function.Supplier;
 
 public class MatchingController {
     public static void run() {
+        History history = new History();
         while (true) {
             MainFunc mainFunc = requestMainFunc();
             if (mainFunc == MainFunc.QUIT) {
                 return;
             }
             notifyCourse();
-            CourseMission courseMission = requestCourseMission();
+            notifyResult(history, requestCourseMission());
         }
     }
 
@@ -30,7 +34,11 @@ public class MatchingController {
     }
 
     private static void notifyCourse() {
-        OutputView.printCourse();
+        OutputView.printCourse(Course.buildOptions(), Mission.buildOptionsOrderByLevel());
+    }
+
+    private static void notifyResult(History history, CourseMission courseMission) {
+        OutputView.printResult("");
     }
 
     private static MainFunc requestMainFunc() {
