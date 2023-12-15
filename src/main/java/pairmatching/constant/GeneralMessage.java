@@ -10,7 +10,7 @@ public enum GeneralMessage {
     NOTIFY_RESULT("페어 매칭 결과입니다.\n%s"),
 
     REQUEST_MAIN_FUNC("기능을 선택하세요.\n%s"),
-    REQUEST_COURSE("""
+    REQUEST_COURSE_MISSION("""
             과정, 레벨, 미션을 선택하세요.
             ex) 백엔드, 레벨1, 자동차경주""");
 
