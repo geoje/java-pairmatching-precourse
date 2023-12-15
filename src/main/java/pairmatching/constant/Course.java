@@ -28,4 +28,9 @@ public enum Course {
                 .map(Course::toString)
                 .collect(Collectors.joining(DELIMITER));
     }
+
+    @Override
+    public String toString() {
+        return name;
+    }
 }

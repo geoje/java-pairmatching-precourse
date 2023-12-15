@@ -23,4 +23,9 @@ public enum Level {
                 .findFirst()
                 .orElseThrow(() -> new IllegalArgumentException(LEVEL_NOT_FOUND.toString()));
     }
+
+    @Override
+    public String toString() {
+        return name;
+    }
 }
